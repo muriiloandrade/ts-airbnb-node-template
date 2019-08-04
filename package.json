@@ -1,0 +1,42 @@
+{
+  "name": "circuito-surf",
+  "version": "1.0.0",
+  "description": "Aplicaçao desenvolvida com o intuito de resolver o desafio da Horizon",
+  "main": "server.js",
+  "repository": "https://github.com/muriiloandrade/ts-airbnb-node-template.git",
+  "author": "Murilo A.",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon src/server.ts",
+    "build": "tsc && node ./dist/server.js"
+  },
+  "private": true,
+  "dependencies": {
+    "compression": "^1.7.4",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "helmet": "^3.20.0",
+    "mongoose": "^5.6.8",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "@types/compression": "^0.0.36",
+    "@types/dotenv": "^6.1.1",
+    "@types/express": "^4.17.0",
+    "@types/helmet": "^0.0.43",
+    "@types/mongoose": "^5.5.11",
+    "@types/node": "^12.6.9",
+    "@types/winston": "^2.4.4",
+    "@typescript-eslint/eslint-plugin": "^1.13.0",
+    "@typescript-eslint/parser": "^1.13.0",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-prettier": "^3.1.0",
+    "nodemon": "^1.19.1",
+    "prettier": "^1.18.2",
+    "sucrase": "^3.10.1",
+    "typescript": "^3.5.3"
+  }
+}
