@@ -26,19 +26,13 @@ module.exports = {
     '@typescript-eslint/no-useless-constructor': 'error',
     camelcase: 'off',
     '@typescript-eslint/camelcase': ['error', { properties: 'always' }],
-    '@typescript-eslint/interface-name-prefix': 1,
     '@typescript-eslint/explicit-function-return-type': 0,
   },
   settings: {
-    "import/resolver": {
-      "node": {
-        extensions: [
-          ".js",
-          ".jsx",
-          ".ts",
-          ".tsx"
-        ]
-      }
-    }
-  }
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      },
+    },
+  },
 };

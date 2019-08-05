@@ -1,18 +1,14 @@
 import express from 'express';
 import helmet from 'helmet';
 import compression from 'compression';
-import mongoose from 'mongoose';
+import userRoutes from './routes/userRoutes';
 import logger from './utils/logger';
-import { MONGODB_URI } from './utils/secrets';
 
 class App {
   public app: express.Application
 
-  private mongoUrl = MONGODB_URI;
-
   public constructor() {
     this.app = express();
-    this.database();
     this.middlewares();
     this.routes();
   }
@@ -26,21 +22,9 @@ class App {
     logger.info('Middlewares OK!');
   }
 
-  private database(): void {
-    mongoose.connect(`${this.mongoUrl}`, {
-      poolSize: 50,
-      wtimeout: 2500,
-      useNewUrlParser: true,
-    }).then(() => {
-      logger.info('MongoDB up and running!');
-    }).catch((err: mongoose.Error) => {
-      logger.error(`MongoDB connection error. Error: ${err.message}`);
-      process.exit(1);
-    });
-  }
-
   private routes(): void {
-    this.app.get('/', (req, res) => res.send('Hello World!'));
+    this.app.use('/user', userRoutes);
+    logger.info('Routes OK!');
   }
 }
 

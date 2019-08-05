@@ -1,10 +1,13 @@
 # The objective of this repo is:
 
-## Practice TS and learn how to use some things and remember others, like:
+## Practice TS and learn how to use and do some things and remember others, like:
 
 - Sequelize;
 - Relational database in Node.js applications. I'm thinking if I'll use PostgreSQL or
   MySQL (or just try both of them, dunno);
+- Session implementation
+- Passport
+- Login with Facebook/Google and as many different 3rd party login services I can
 - Learn and follow some good practices;
 
 ### And, that's all for now
