@@ -32,3 +32,42 @@ if (!MONGODB_URI) {
   }
   process.exit(1);
 }
+
+export const CERT = prod ? process.env.CERT : process.env.LOCAL_CERT;
+
+if (!CERT) {
+  if (prod) {
+    logger.error('No certificate founded. Set CERT environment variable with the path'
+      + 'to your certificate.');
+  } else {
+    logger.error('No certificate founded. Set LOCAL_CERT environment variable with the path'
+    + 'to your certificate.');
+  }
+  process.exit(1);
+}
+
+export const CERT_KEY = prod ? process.env.CERT_KEY : process.env.LOCAL_CERT_KEY;
+
+if (!CERT_KEY) {
+  if (prod) {
+    logger.error('No key for the certificate founded. Set CERT_KEY environment variable'
+      + ' with the path to your certificate.');
+  } else {
+    logger.error('No key for the certificate founded. Set LOCAL_CERT_KEY environment'
+      + ' variable with the path to your certificate.');
+  }
+  process.exit(1);
+}
+
+export const CERT_PASS = prod ? process.env.CERT_PASS : process.env.LOCAL_CERT_PASS;
+
+if (!CERT_PASS) {
+  if (prod) {
+    logger.error('No password for the certificate founded. Set CERT_PASS environment'
+      + ' variable with the path to your certificate.');
+  } else {
+    logger.error('No password for the certificate founded. Set LOCAL_CERT_PASS environment'
+    + ' variable with the path to your certificate.');
+  }
+  process.exit(1);
+}
