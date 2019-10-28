@@ -33,6 +33,9 @@ connect(`${MONGODB_URI}`, {
         logger.info(`App running on port ${app.get('port')} in mode ${app.get('env')}!`);
       },
     );
+  app.listen(3333, () => {
+    logger.info(`App running on port 3333 in mode ${app.get('env')}!`);
+  });
 }).catch((err: Error) => {
   logger.error(`MongoDB connection error: ${err.message}`);
   process.exit(1);
